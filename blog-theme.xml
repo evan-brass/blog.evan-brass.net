@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' lang="en">
+	<head>
+		<meta expr:charset="data:blog.encoding" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Mediocre content about life and my technical interests.">
+		<title><data:blog.pageTitle /></title>
+
+		<b:skin><![CDATA[]]></b:skin>
+	</head>
+
+	<body>
+		<b:section id='header'>
+			<header>
+				<h1><a expr:href="data:blog.homepageUrl"><data:blog.title /></a></h1>
+				<p>Mediocre content about life and my technical interests.</p>
+				<nav></nav>
+			</header>
+		</b:section>
+	</body>
+</html>
