@@ -34,8 +34,3 @@ div[itemprop="articleBody"] a[href]:not([href^="#"])::after {
 body > :not(main) {
 	display: none;
 }
-
-/* Hide the Table Of Contents */
-.toc {
-	/* display: none; */
-}
