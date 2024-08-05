@@ -2,14 +2,11 @@
 <html b:layoutsVersion="3" expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale">
 	<head>
 		<meta expr:charset="data:blog.encoding" />
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self' *.evan-brass.net; connect-src *; media-src * blob:; img-src *;"/>
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 		<title><data:view.title.escaped/></title>
 		<meta expr:content="data:view.description" name="description" />
 
-		<b:comment>CSP forbids inline styles</b:comment>
 		<b:skin><![CDATA[]]></b:skin>
-
 		<link rel="stylesheet" href="https://gh.evan-brass.net/blog.evan-brass.net/css/main.css"/>
 		<link rel="stylesheet" href="https://gh.evan-brass.net/blog.evan-brass.net/css/print.css" media="print"/>
 
@@ -24,9 +21,9 @@
 			</b:defaultmarkup>
 			<b:defaultmarkup type="Blog">
 				<b:includable id="main" var="top">
-					<header>
-						<b:include data="top" name="status-message"/>
-					</header>
+					<b:if cond="data:top.navMessage">
+						<header><data:top.navMessage/></header>
+					</b:if>
 					<b:loop values="data:posts" var="post">
 						<article itemscope="itemscope" itemtype="https://schema.org/BlogPosting">
 							<b:class cond="data:view.isMultipleItems" name="snippet"/>
@@ -48,7 +45,15 @@
 						</article>
 					</b:loop>
 					<footer>
-						<b:include name="nextprev"/>
+						<nav>
+							<b:if cond="data:top.newerPageUrl">
+								<a expr:href="data:top.newerPageUrl" float="left"><data:top.newerPageTitle/></a>
+							</b:if>
+							<a expr:href="data:blog.homepageUrl" float="right"><data:top.homeMsg/></a>
+							<b:if cond="data:top.olderPageUrl">
+								<a expr:href="data:top.olderPageUrl"><data:top.olderPageTitle/></a>
+							</b:if>
+						</nav>
 					</footer>
 				</b:includable>
 			</b:defaultmarkup>
