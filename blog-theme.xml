@@ -1,20 +1,77 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale'>
+<html b:layoutsVersion="3" expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale">
 	<head>
 		<meta expr:charset="data:blog.encoding" />
-		<link rel="stylesheet" href="https://gh.evan-brass.net/blog.evan-brass.net/css/main.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Mediocre content about life and my technical interests." />
-		<title><data:blog.pageTitle /></title>
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self' *.evan-brass.net; connect-src *; media-src * blob:; img-src *;"/>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title><data:view.title.escaped/></title>
+		<meta expr:content="data:view.description" name="description" />
 
-		<b:skin />
-		<link href="https://gh.evan-brass.net/blog.evan-brass.net/css/print.css" rel="stylesheet" media="print" />
+		<b:comment>CSP forbids inline styles</b:comment>
+		<b:skin><![CDATA[]]></b:skin>
+
+		<link rel="stylesheet" href="https://gh.evan-brass.net/blog.evan-brass.net/css/main.css"/>
+		<link rel="stylesheet" href="https://gh.evan-brass.net/blog.evan-brass.net/css/print.css" media="print"/>
+
+		<b:include data="blog" name="all-head-content" />
+
+		<b:defaultmarkups>
+			<b:defaultmarkup type="Header">
+				<b:includable id="main">
+					<h1><b:tag name="a" cond="data:blog.url != data:blog.homepageUrl" expr:href="data:blog.homepageUrl"><data:title/></b:tag></h1>
+					<p><data:description/></p>
+				</b:includable>
+			</b:defaultmarkup>
+			<b:defaultmarkup type="Blog">
+				<b:includable id="main" var="top">
+					<header>
+						<b:include data="top" name="status-message"/>
+					</header>
+					<b:loop values="data:posts" var="post">
+						<article itemscope="itemscope" itemtype="https://schema.org/BlogPosting">
+							<b:class cond="data:view.isMultipleItems" name="snippet"/>
+							<meta itemprop="blogId" expr:content="data:blog.blogId"/>
+							<meta itemprop="postId" expr:content="data:post.id"/>
+							<header>
+								<h1 itemprop="headline"><b:tag name="a" cond="data:blog.url != data:post.url" expr:href="data:post.url"><data:post.title/></b:tag></h1>
+								<meta itemprop="author" expr:content="data:post.author"/>
+								<time itemprop="datePublished" expr:datetime="data:post.timestampISO8601"><data:post.timestamp/></time>
+								<ul itemprop="keywords">
+									<b:loop values="data:post.labels" var="label">
+										<li><a expr:href="data:label.url"><data:label.name/></a></li>
+									</b:loop>
+								</ul>
+							</header>
+							<div itemprop="articleBody">
+								<data:post.body/>
+							</div>
+						</article>
+					</b:loop>
+					<footer>
+						<b:include name="nextprev"/>
+					</footer>
+				</b:includable>
+			</b:defaultmarkup>
+		</b:defaultmarkups>
 	</head>
 
 	<body>
-		<b:section id="all">
-
-		</b:section>
+		<header role="banner">
+			<b:section id="header">
+				<b:widget id="Header1" type="Header">
+					<b:includable id="main"/>
+				</b:widget>
+			</b:section>
+		</header>
+		<main>
+			<b:section id="main">
+				<b:widget id="Blog1" type="Blog">
+					<b:includable id="main"/>
+				</b:widget>
+			</b:section>
+		</main>
+		<footer>
+			<b:section id="footer" />
+		</footer>
 	</body>
 </html>

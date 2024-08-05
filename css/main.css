@@ -1,5 +1,32 @@
 @import url(outline.css);
 
+/* I don't want these divs */
+.section, .widget {
+	display: contents;
+}
+
+/* Snippet article tags */
+@media not print {
+	.snippet [itemprop="articleBody"] {
+		max-height: 300px;
+		overflow: hidden;
+		position: relative;
+	}
+	.snippet [itemprop="articleBody"]::after {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		height: 80px;
+		width: 100%;
+		background: linear-gradient(transparent, white);
+	}
+}
+
+article + article {
+	margin-top: 1em;
+	border-top: 1px solid;
+}
+
 html {
 	margin: 0;
 
@@ -51,13 +78,21 @@ h1, h2, h3, h4, h5, h6 {
 p {
 	text-indent: 3ch;
 }
-body > header {
-	border: 1px solid currentColor;
-	border-width: 0 1px;
-	padding: 1em 2em;
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
+body > header, body > footer {
+	margin: 1em 0;
+}
+[role="banner"] {
+	padding: 1em;
+	text-align: center;
+	border-left: 2px solid currentColor;
+	border-right: 2px solid currentColor;
+}
+header a, footer a {
+	text-decoration: none;
+}
+body > footer {
+	padding: 1em 0;
+	border-top: 2px solid currentColor;
 }
 [itemprop="articleBody"] > *:first-child {
 	margin-top: 0;
@@ -153,14 +188,6 @@ html {
 }
 time {
 	font-variant: small-caps;
-}
-
-/* Editing */
-:focus-within ::part(edit-bar) {
-	visibility: visible;
-}
-:focus-visible[contentEditable] {
-	outline: 0;
 }
 
 code {

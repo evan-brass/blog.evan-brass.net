@@ -1,17 +1,31 @@
 /* Two columns for printing. */
-html {
-	line-height: 1.5;
-	/* column-count: 2; */
-	column-width: 3in;
+article {
+	break-before: page;
+	column-count: 2;
+	/* column-width: 3in; */
 	column-rule: 1px solid currentColor;
 	column-fill: balance;
 	column-gap: 3em;
-	font-family: unset;
-
-	tab-size: 2ch; /* Try to squash code samples in print. */
+	overflow: hidden;
 }
 header {
 	column-span: all;
+}
+
+/* Hide headers/footers that are not within an article */
+:not(article) > :is(header, footer) {
+	display: none;
+}
+
+/* Adjust type settings for printing */
+html {
+	line-height: 1.5;
+	font-family: serif;
+
+	tab-size: 2ch; /* Try to squash code samples in print. */
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
 }
 
 /* Removing body padding because the print dialog will add page margins. */
@@ -22,7 +36,7 @@ body {
 
 /* Remove color from links - they can't be clicked on paper - and show the href. */
 a {
-	color: currentColor !important;
+	/* color: currentColor !important; */
 	text-decoration: unset;
 }
 div[itemprop="articleBody"] a[href]:not([href^="#"])::after {
@@ -30,7 +44,8 @@ div[itemprop="articleBody"] a[href]:not([href^="#"])::after {
 	word-break: break-all;
 }
 
-/* Hide everything except the main content */
-body > :not(main) {
-	display: none;
+/* Remove all colors */
+* {
+	background-color: unset !important;
+	color: unset !important;
 }
