@@ -9,6 +9,7 @@
 		<title><data:blog.pageTitle /></title>
 
 		<b:skin />
+		<link href="https://gh.evan-brass.net/blog.evan-brass.net/css/print.css" rel="stylesheet" media="print" />
 	</head>
 
 	<body>
