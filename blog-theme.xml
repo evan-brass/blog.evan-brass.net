@@ -42,6 +42,9 @@
 							<div itemprop="articleBody">
 								<data:post.body/>
 							</div>
+							<b:if cond="data:view.isSingleItem">
+								<b:include name="comments"/>
+							</b:if>
 						</article>
 					</b:loop>
 					<footer>
@@ -49,9 +52,9 @@
 							<b:if cond="data:top.newerPageUrl">
 								<a expr:href="data:top.newerPageUrl" float="left"><data:top.newerPageTitle/></a>
 							</b:if>
-							<a expr:href="data:blog.homepageUrl" float="right"><data:top.homeMsg/></a>
+							<a expr:href="data:blog.homepageUrl"><data:top.homeMsg/></a>
 							<b:if cond="data:top.olderPageUrl">
-								<a expr:href="data:top.olderPageUrl"><data:top.olderPageTitle/></a>
+								<a expr:href="data:top.olderPageUrl" float="right"><data:top.olderPageTitle/></a>
 							</b:if>
 						</nav>
 					</footer>

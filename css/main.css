@@ -1,4 +1,4 @@
-@import url(outline.css);
+/* Unfortunately, this only works in FF: @import url(outline.css); */
 
 /* I don't want these divs */
 .section, .widget {
@@ -29,6 +29,7 @@ article + article {
 
 nav {
 	display: block;
+	text-align: center;
 }
 
 html {
