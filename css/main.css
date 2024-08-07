@@ -17,18 +17,12 @@ html {
 	html { tab-size: 2ch; }
 	p { text-indent: 2ch; }
 }
-code {
-	padding: 0.3em;
-}
 pre {
 	background-color: inherit;
 	white-space: pre-wrap;
 	line-height: normal;
 	padding: 0.5em;
 	overflow-wrap: break-word;
-	& code {
-		padding: unset;
-	}
 }
 nav, img {
 	display: block;
