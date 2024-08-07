@@ -74,13 +74,6 @@ nav {
 	}
 }
 
-/* Cap the width, center and pad */
-body {
-	margin: 0 auto;
-	padding: 2em;
-	max-width: 80ch;
-}
-
 /* Turn the keywords list into a comma separated list */
 [itemprop="keywords"] {
 	padding: 0;

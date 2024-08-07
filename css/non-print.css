@@ -25,6 +25,13 @@ code, pre:has(code) {
 	}
 }
 
+/* Cap the width, center and pad */
+body {
+	margin: 0 auto;
+	padding: 2em;
+	max-width: 80ch;
+}
+
 /* "double spaced" */
 [itemprop="articleBody"], [itemprop="abstract"] {
 	line-height: 2;
