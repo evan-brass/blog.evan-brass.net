@@ -1,0 +1,60 @@
+/* Set fonts and colors */
+html {
+	color: var(--foreground-color);
+	background-color: var(--background-color);
+	font-size: 16px;
+	line-height: 2;
+	letter-spacing: 0.4pt;
+	font-family: sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: serif;
+}
+a {
+	color: var(--link-color);
+	font-weight: bold;
+}
+code {
+	background-color: var(--code-background);
+}
+
+/* Place asides in the margins */
+[itemprop="articleBody"] {
+	position: relative;
+
+	& aside {
+		box-sizing: border-box;
+		position: absolute;
+		width: calc((100vw - 100%) / 2);
+		max-width: 40ch;
+		padding: 0 1em;
+		left: 100%;
+
+		/* Alternate which side the aside is on. */
+		&:nth-of-type(2n+1) {
+			left: unset;
+			right: 100%;
+		}
+	}
+}
+
+/* We only set colors when media isn't print */
+html {
+	--background-color: #eee;
+	--foreground-color: #111;
+	--code-background: #D4D7ED;
+	--link-color: #5d72d8;
+}
+@media(prefers-color-scheme: light) {}
+@media(prefers-color-scheme: dark) {
+	/* TODO: Add menu to control light/dark mode */
+	html {
+		--background-color: #111;
+		--foreground-color: #ccc;
+		--code-background: #2E3760;
+		--link-color: #7F8EDC;
+	}
+	img.invert-dark {
+		filter: invert() hue-rotate(180deg);
+	}
+}

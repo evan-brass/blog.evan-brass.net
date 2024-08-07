@@ -19,13 +19,14 @@ header {
 
 /* Adjust type settings for printing */
 html {
-	line-height: 1.5;
-	font-family: serif;
-
 	tab-size: 2ch; /* Try to squash code samples in print. */
+	orphans: 2;
+	widows: 2;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: sans-serif;
+	break-inside: avoid;
+	break-after: avoid;
 }
 
 /* Removing body padding because the print dialog will add page margins. */
@@ -39,7 +40,7 @@ a {
 	/* color: currentColor !important; */
 	text-decoration: unset;
 }
-div[itemprop="articleBody"] a[href]:not([href^="#"])::after {
+[itemprop="articleBody"] a[href]:not(:has(>img)):not([href^="#"])::after {
 	content: " [" attr(href) "]";
 	word-break: break-all;
 }
