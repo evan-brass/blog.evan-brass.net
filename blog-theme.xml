@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html b:layoutsVersion="3" expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale">
+<html b:css="false" b:js="false" b:layoutsVersion="3" expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale">
 	<head>
 		<meta expr:charset="data:blog.encoding" />
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
