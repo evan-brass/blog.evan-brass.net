@@ -3,13 +3,20 @@
 @import url(print.css) print;
 
 /* Blogger, I don't want your divs. */
-.section, .widget { display: contents; }
+.section, .widget {
+	display: contents;
+	margin: unset;
+	padding: unset;
+	margin-top: unset;
+	margin-bottom: unset;
+	width: unset;
+	height: unset;
+}
 
 /* CSS Reset */
 html {
 	margin: 0;
 	tab-size: 4;
-	line-height: 2;
 	overflow-wrap: break-word;
 }
 /* - Scrunch tabs / indent on small screens */
@@ -20,7 +27,6 @@ html {
 pre {
 	background-color: inherit;
 	white-space: pre-wrap;
-	line-height: normal;
 	padding: 0.5em;
 	overflow-wrap: break-word;
 }
@@ -47,6 +53,11 @@ time, nav a {
 }
 :focus-visible {
 	outline-offset: 0.5em;
+}
+
+/* Put some space between posts */
+article + article {
+	margin-top: 1em;
 }
 
 /* Style nav sections */

@@ -7,6 +7,10 @@ article {
 	column-fill: balance;
 	column-gap: 3em;
 	overflow: hidden;
+
+	+ article {
+		break-before: unset;
+	}
 }
 header {
 	column-span: all;

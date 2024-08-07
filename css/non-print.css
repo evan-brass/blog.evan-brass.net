@@ -25,6 +25,7 @@ code, pre:has(code) {
 /* Place asides in the margins */
 [itemprop="articleBody"] {
 	position: relative;
+	line-height: 1.5;
 
 	& aside {
 		box-sizing: border-box;
