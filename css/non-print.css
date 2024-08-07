@@ -14,8 +14,12 @@ a {
 	color: var(--link-color);
 	font-weight: bold;
 }
-code {
+code, pre:has(code) {
 	background-color: var(--code-background);
+
+	& code {
+		background-color: unset;
+	}
 }
 
 /* Place asides in the margins */

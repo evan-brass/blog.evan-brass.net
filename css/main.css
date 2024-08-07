@@ -28,7 +28,6 @@ pre {
 	overflow-wrap: break-word;
 	& code {
 		padding: unset;
-		background-color: unset;
 	}
 }
 nav, img {
