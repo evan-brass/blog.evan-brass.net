@@ -22,10 +22,14 @@ code, pre:has(code) {
 	}
 }
 
+/* "double spaced" */
+[itemprop="articleBody"], [itemprop="abstract"] {
+	line-height: 2;
+}
+
 /* Place asides in the margins */
 [itemprop="articleBody"] {
 	position: relative;
-	line-height: 1.5;
 
 	& aside {
 		box-sizing: border-box;
