@@ -1,16 +1,11 @@
 /* Two columns for printing. */
 article {
-	break-before: page;
 	column-count: 2;
 	/* column-width: 3in; */
 	column-rule: 1px solid currentColor;
 	column-fill: balance;
 	column-gap: 3em;
 	overflow: hidden;
-
-	+ article {
-		break-before: unset;
-	}
 }
 header {
 	column-span: all;

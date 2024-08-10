@@ -3,15 +3,7 @@
 @import url(print.css) print;
 
 /* Blogger, I don't want your divs. */
-.section, .widget {
-	display: contents;
-	margin: unset;
-	padding: unset;
-	margin-top: unset;
-	margin-bottom: unset;
-	width: unset;
-	height: unset;
-}
+.section, .widget { display: contents; }
 
 /* CSS Reset */
 html {
@@ -51,6 +43,9 @@ header, footer {
 }
 time, nav a {
 	font-variant: small-caps;
+}
+figcaption {
+	text-align: center;
 }
 [contenteditable] {
 	border: 1px dashed salmon;
