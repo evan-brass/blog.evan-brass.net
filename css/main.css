@@ -29,6 +29,9 @@ img {
 	max-width: 100%;
 	margin: 0 auto;
 }
+img[width] {
+	height: unset;
+}
 ul, ol {
 	margin: 0;
 	padding: 0 0 0 3ch;

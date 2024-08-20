@@ -27,6 +27,9 @@ h1, h2, h3, h4, h5, h6 {
 	break-inside: avoid;
 	break-after: avoid;
 }
+figure {
+	break-inside: avoid;
+}
 
 /* Removing body padding because the print dialog will add page margins. */
 body {
